@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title> true answer game
+  </title>
+</head>
+
+<body background="gameimage.jpg">
+
+
+<div id = "timeremaining" style=" width : 500px;margin : 0 auto;margin-top: 50px"></div>
+<div  style=" width : 500px;margin : 0 auto"><h2 >what was the first full length CGI movie</h2></div>
+<form id = "form1" style=" width : 500px;margin : 0 auto">
+  <input type="radio" id="firstquestion1"  name="firstquestion" value="one"  >A bugs life 
+  <input type="radio" id="firstquestion2" name="firstquestion" value="two"> monsterinc
+  <input type="radio" id="firstquestion3" name="firstquestion" value="three"> toy story 
+  <input type="radio" id="firstquestion4" name="firstquestion" value="four"> the lion king 
+</form> 
+<div  style=" width : 500px;margin : 0 auto"><h2>which one of these is not the name of spice girls</h2></div>
+<form id = "form2" style=" width : 500px;margin : 0 auto">
+  <input type="radio" id="secondquestion" name ="secondquestion"  value="one" >sporty spice 
+  <input type="radio" id="secondquestion" name ="secondquestion" value="two"> fred spice
+  <input type="radio" id="secondquestion" name ="secondquestion" value="three"> scary spice
+  <input type="radio" id="secondquestion" name ="secondquestion"  value="four"> pash spice 
+</form>
+<div  style=" width : 500px;margin : 0 auto"><h2>which NBA team won the most titles in 90s</h2></div>
+<form  id = "form3" style=" width : 500px;margin : 0 auto">
+  <input type="radio" id="thirdquestion" name ="thirdquestion" value="one" >new york 
+  <input type="radio" id="thirdquestion" name ="thirdquestion" value="two"> portland
+  <input type="radio" id="thirdquestion" name ="thirdquestion" value="three"> los angelos 
+  <input type="radio" id="thirdquestion" name ="thirdquestion" value="four"> chicago 
+</form> 
+<div  style=" width : 600px;margin : 0 auto"><h2>which group released the hot song: smells like teen spirit</h2></div>
+<form id = "form4" style=" width : 500px;margin : 0 auto">
+  <input type="radio" id="fourthquestion" name ="fourthquestion" value="one" >Nirvana 
+  <input type="radio" id="fourthquestion"  name ="fourthquestion"value="two"> Backstreet boys
+  <input type="radio" id="fourthquestion" name ="fourthquestion" value="three"> The off spring
+  <input type="radio" id="fourthquestion" name ="fourthquestion" value="four"> No doubt
+</form> 
+<div id="button" style="margin-top:25px "><a href="result.html">result</a></div>
+<style>
+#button {
+	
+    width: 6em;
+    border: 2px solid green;
+    background: #ffe;
+    border-radius: 5px;
+    margin:0 auto;
+    margin-top: 25%;
+}
+a {
+    display: block;
+    width: 100%;
+    line-height: 2em;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+}
+a:hover {
+    color: red;
+    background: #eff;
+}
+</style>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+ var number = 30;
+var intervalId;
+
+
+var incorrectanswer = 0;
+
+	
+      intervalId = setInterval(decrement, 1000);
+    
+    function decrement() {
+
+      //  Decrease number by one.
+      number--;
+      
+
+      //  Show the number in the #show-number tag.
+      $("#timeremaining").html("<h2>" + "the time remaining  " + number + "</h2>");
+
+
+      //  Once number hits zero...
+      if (number === 0) {
+
+      var correctanswer = 0;
+       incorrectanswer = 0;
+
+
+    	if($('input[name = "firstquestion"]:checked').length > 0 &&  document.querySelector('input[name = "firstquestion"]:checked').value == "one" ){
+    		correctanswer++;
+
+    	}
+    	
+    	
+    	if($('input[name = "secondquestion"]:checked').length > 0 && document.querySelector('input[name = "secondquestion"]:checked').value== "two" ){
+    		correctanswer++;
+
+    	}
+    	
+    	
+    	if( $('input[name = "thirdquestion"]:checked').length > 0 && document.querySelector('input[name = "thirdquestion"]:checked').value== "three" ){
+    		correctanswer++;
+
+    	}
+    	
+    	
+    	if($('input[name = "fourthquestion"]:checked').length > 0 &&document.querySelector('input[name = "fourthquestion"]:checked').value == "four" ){
+    		correctanswer++;
+
+    	}
+    	
+    	
+    	incorrectanswer = 4 - correctanswer;
+    	sessionStorage.savedvaluecorrectanswer = correctanswer;
+
+        //  ...run the stop function.
+        window.location.href="result.html";
+
+        //  Alert the user that time is up.
+        
+      }
+    }
+    $("#button").click(function(){
+    	
+
+ 
+
+var correctanswer = 0;
+var incorrectanswer = 0;
+
+
+    	if($('input[name = "firstquestion"]:checked').length > 0 &&  document.querySelector('input[name = "firstquestion"]:checked').value == "one" ){
+    		correctanswer++;
+
+    	}
+    	
+    	
+    	if($('input[name = "secondquestion"]:checked').length > 0 && document.querySelector('input[name = "secondquestion"]:checked').value== "two" ){
+    		correctanswer++;
+
+    	}
+    	
+    	
+    	if( $('input[name = "thirdquestion"]:checked').length > 0 && document.querySelector('input[name = "thirdquestion"]:checked').value== "three" ){
+    		correctanswer++;
+
+    	}
+    	
+    	
+    	if($('input[name = "fourthquestion"]:checked').length > 0 &&document.querySelector('input[name = "fourthquestion"]:checked').value == "four" ){
+    		correctanswer++;
+
+    	}
+    	
+    	
+    	incorrectanswer = 4 - correctanswer;
+    	sessionStorage.savedvaluecorrectanswer = correctanswer;
+
+
+         console.log(correctanswer);
+
+     });
+        
+
+
+ </script>
+
+</body>
+ 
+    
+
+</html>
